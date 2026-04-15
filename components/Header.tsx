@@ -23,7 +23,7 @@ export default function Header() {
           <img
             src="/logo without element.svg"
             alt="Logo"
-            className="w-40 h-full"
+            className="w-40 h-full brightness-[0.4]"
           />
         </div>
 
