@@ -1,26 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@400;500&display=swap');
+@import url('https://use.typekit.net/xuv7kph.css');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #f9f5ee;
+  --bg-surface: #f0e8d6;
+  --text-primary: #1a1008;
+  --text-heading: #9d783b;
+  --text-muted: #6b4f22;
+  --btn-primary-bg: #9d783b;
+  --btn-primary-text: #f9f5ee;
+  --btn-primary-hover: #caa45c;
+  --btn-secondary-bg: #1a1008;
+  --btn-secondary-text: #f9f5ee;
+  --btn-secondary-hover: #6b4f22;
+  --color-accent: #caa45c;
+  --color-accent-hover: #e8c07a;
+  --color-border: #e0d3bc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --color-heading: var(--text-heading);
+  --color-muted: var(--text-muted);
+  --color-button: var(--btn-primary-bg);
+  --color-button-hover: var(--btn-primary-hover);
+  --color-button-text: var(--btn-primary-text);
+  --color-link: var(--color-accent);
+  --color-link-hover: var(--color-accent-hover);
+  --color-border: var(--color-border);
+  
+  --color-gold-deep: #9d783b;
+  --color-gold-warm: #caa45c;
+  --color-honey: #e8c07a;
+  --color-parchment: #f9f5ee;
+  --color-cream: #f0e8d6;
+  --color-walnut: #6b4f22;
+  --color-charcoal: #1a1008;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: "Cormorant Garamond", serif;
+  --font-inter: "Inter", sans-serif;
+  --font-trajan: "trajan-pro-3", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility animate-fade-rise {
+  animation: fadeRise 0.8s ease-out forwards;
+}
+
+@utility animate-fade-rise-delay {
+  animation: fadeRise 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+@utility animate-fade-rise-delay-2 {
+  animation: fadeRise 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
